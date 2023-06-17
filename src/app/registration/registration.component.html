@@ -1,0 +1,59 @@
+<form #register="ngForm" (ngSubmit)="onSubmit(register)">
+    <h1>Registration</h1>
+        <h4><label for="Full Name">Full Name</label></h4>
+        <input type="text" name="fullName" placeholder="Please enter your name" [(ngModel)]="signup.fullName" #fullName="ngModel" required ngModel>
+        <h4><label for="Position you are applying for">Position you are applying for</label></h4>
+        <select placeholder="Please select" [(ngModel)]="signup.position" #position="ngModel" ngModel>
+            <option>--Please select--</option>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>Javascript</option>
+            <option>Typescript</option>
+            <option>Angular</option>
+        </select>
+        <h4><label for="email">Email</label></h4>
+    <input type="text" name="email"  placeholder="Email" [(ngModel)]="signup.email" #email="ngModel" required email ngModel>
+
+        
+     <h4><label for="Phone number">Phone number</label></h4>
+     <select>
+        <option>91</option>
+        <option>713</option>
+        <option>923</option>
+     </select>
+     <input type="phone" placeholder="Phone number" [(ngModel)]="signup.mobile" #mobile="ngModel" ngModel>
+        <h4><label for="country">Country</label></h4>
+        <input type="text" name="country"  placeholder="Please enter your country" [(ngModel)]="signup.country" #email="ngModel" ngModel>
+            <h4><label for="city">City</label></h4>
+            <input type="text" name="city"  placeholder="Please enter your city" [(ngModel)]="signup.city" #email="ngModel" ngModel>
+        <h4><label for="password">Password</label></h4>
+        <input type="password" name="pswd"  placeholder="Enter password" [(ngModel)]="signup.password" #password="ngModel" minlength="8" maxlength="12" pattern="^[a-zA-Z0-9@ ]+$" required  ngModel>
+        
+        <p style="color: red;" *ngIf="(password.touched || register.submitted) && password.errors?.['required']">Password required</p>
+        <p style="color:red;" *ngIf="(password.touched || register.submitted) && password.errors?.['pattern']">Password must be 8-12 characters and should contain letters, numbers, special characters and capital letter.</p>
+        <h4><label for="Confirm password">Confirm Password</label></h4>
+        <input type="password" name="cnfmpswd"  placeholder="Enter confirm password" [(ngModel)]="signup.confirmPassword" #confirmPassword="ngModel" minlength="8" maxlength="12" pattern="^[a-zA-Z0-9@ ]+$" required ngModel>
+        <p style="color: red;" *ngIf="(confirmPassword.touched || register.submitted) && confirmPassword.errors?.['required']">Confirm Password required</p>
+        <p style="color:red;" *ngIf="(confirmPassword.touched || register.submitted) && signup.password!==signup.confirmPassword">Password and confirm password should be same</p>
+    <div>
+        <h4><label>Gender:</label></h4>
+        <input id="male" type="radio" name="gender" value="male" [(ngModel)]="signup.gender" #gender="ngModel">
+        <label>Male</label>
+        <input id="female" type="radio" name="gender" value="female" [(ngModel)]="signup.gender" #gender="ngModel">
+        <label>Female</label>
+        <input id="other" type="radio" name="gender" value="other" [(ngModel)]="signup.gender" #gender="ngModel">
+        <label>Other</label>
+        <input id="Prefer not to say" type="radio" name="gender" value="Prefer not to say" [(ngModel)]="signup.gender" #gender="ngModel">
+        <label>Prefer not to say</label>
+       </div> 
+    <p>
+        <button (click)="onSignUp()">Next Step</button>
+    </p>
+    <p>Already have an account?<a routerLink="/login">Sign in</a></p>
+
+</form>
+
+
+
+
+

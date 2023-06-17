@@ -1,0 +1,13 @@
+form
+{
+    margin-left: 700px;
+    border: 1px solid;
+    margin-inline-start: 500px;
+    margin-inline-end: 500px;
+    text-align: center;
+    background-color: blueviolet;
+}
+button{
+    width:100px;
+    background-color: blue;
+}

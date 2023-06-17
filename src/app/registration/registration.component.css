@@ -1,0 +1,15 @@
+form{
+    margin-left: 600px;
+    border: 1px solid;
+    margin-inline-start: 300px;
+    margin-inline-end: 300px;
+    background-color:blueviolet;
+ text-align: center;
+}
+button{
+    width:250px;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+}
+
